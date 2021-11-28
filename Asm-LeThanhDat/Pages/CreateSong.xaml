@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="Asm_LeThanhDat.Pages.CreateSong"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Asm_LeThanhDat.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <ScrollViewer>
+        <StackPanel Margin="0 10 0 20">
+            <TextBlock Text="Song form" Margin="20 20 0 10" 
+                       FontSize="20" FontWeight="Bold"/>
+            <TextBox x:Name="Name" Header="Name" Width="620" 
+                         PlaceholderText="Please enter song name" Style="{StaticResource LeftTextBox}"/>
+            <TextBox x:Name="Description" Header="Description" Height="100" Width="620" 
+                     PlaceholderText="Please enter song description" Style="{StaticResource LeftTextBox}"/>
+            <StackPanel Style="{StaticResource StackControl}">
+                <TextBox x:Name="Author" Header="Author" Width="300" 
+                         PlaceholderText="Please enter author name" Margin="0 0 20 0"/>
+                <TextBox x:Name="Singer" Header="Singer" Width="300" 
+                         PlaceholderText="Please enter singer name"/>
+            </StackPanel>
+            <StackPanel Style="{StaticResource StackControl}">
+                <TextBox x:Name="Thumbnail" Header="Thumbnail" Width="300" Margin="0 0 20 0"
+                     PlaceholderText="Please enter song thumbnail" Style="{StaticResource LeftTextBox}"/>
+                <Button Content="Click here to choose image" Margin="0 20 0 0" Click="Handle_Click_UploadImage"/>
+            </StackPanel>
+            <StackPanel Style="{StaticResource StackControl}">
+                <TextBox x:Name="Link" Header="Link" Width="300" Margin="0 0 20 0"
+                     PlaceholderText="Please enter song mp3 link" Style="{StaticResource LeftTextBox}"/>
+                <Button Content="Click here to choose file" Margin="0 20 0 0" Click="Handle_Click_UploadMp3"/>
+            </StackPanel>
+            <TextBox x:Name="Message" Header="Message" Height="100" Width="620" 
+                     PlaceholderText="Please enter your message" Style="{StaticResource LeftTextBox}"/>
+            <StackPanel Style="{StaticResource StackControl}">
+                <Button Content="Submit" Width="120" Margin="0 0 10 0" Click="Button_Click"/>
+                <Button Content="Reset" Width="120"/>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

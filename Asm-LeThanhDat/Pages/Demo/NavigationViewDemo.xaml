@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="Asm_LeThanhDat.Pages.Demo.NavigationViewDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Asm_LeThanhDat.Pages.Demo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <NavigationView PaneTitle="Music I Like" SelectionChanged="NavigationView_SelectionChanged">
+        <NavigationView.MenuItems>
+            <NavigationViewItem Tag="ListSong" Icon="MusicInfo" Content="Latest Song"/>
+            <NavigationViewItem Tag="CreateSong" Icon="Audio" Content="Create Song"/>
+            <NavigationViewItem Tag="MySong" Icon="ContactInfo" Content="My Song"/>
+            <NavigationViewItemSeparator/>
+            <NavigationViewItem Tag="RecentView" Icon="Clock" Content="Recent View"/>
+            <NavigationViewItem Tag="NowPlaying" Icon="Play" Content="Now Playing"/>
+            <NavigationViewItem Tag="MySong" Icon="AlignCenter" Content="Playlist"/>
+            <NavigationViewItemSeparator/>
+            <NavigationViewItem Tag="Profile" Icon="Contact" Content="Profile"/>
+        </NavigationView.MenuItems>
+        <NavigationView.AutoSuggestBox>
+            <AutoSuggestBox QueryIcon="Find" AutomationProperties.Name="Search" />
+        </NavigationView.AutoSuggestBox>
+        <Frame x:Name="contentFrame"/>
+    </NavigationView>
+</Page>

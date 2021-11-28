@@ -1,0 +1,63 @@
+﻿<Page
+    x:Class="Asm_LeThanhDat.Pages.RegisterPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Asm_LeThanhDat.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <ScrollViewer HorizontalAlignment="Center">
+        <StackPanel Margin="60">
+            <TextBlock Text="Register form" Margin="20 20 0 10" 
+                       FontSize="20" FontWeight="Bold"/>
+            <StackPanel Style="{StaticResource StackControl}">
+                <TextBox x:Name="FirstName" Header="First Name" Width="300" 
+                         PlaceholderText="Please enter your first name" Margin="0 0 20 0"/>
+                <TextBox x:Name="LastName" Header="Last Name" Width="300" 
+                         PlaceholderText="Please enter your last name"/>
+            </StackPanel>
+            <StackPanel Style="{StaticResource StackControl}">
+                <PasswordBox x:Name="Password" Header="Password" Width="300" 
+                             PlaceholderText="Please enter your password" Margin="0 0 20 0" />
+                <PasswordBox x:Name="ConfirmPassword" Header="Confirm Password" Width="300" 
+                             PlaceholderText="Please enter your password"/>
+            </StackPanel>
+            <TextBox x:Name="Address" Header="Address" Height="100" Width="620" 
+                     PlaceholderText="Please enter your address" Style="{StaticResource LeftTextBox}"/>
+            <TextBox x:Name="Phone" Header="Phone" Width="300" 
+                     PlaceholderText="Please enter your phone" Style="{StaticResource LeftTextBox}"/>
+            <TextBlock Text="Photo" Margin="20 10 0 0"/>
+            <StackPanel Style="{StaticResource StackControl}">
+                <Border Margin="0 0 20 0" Width="150" Height="100"
+                        BorderBrush="LightGray" BorderThickness="1" CornerRadius="2" >
+                    <Border.Background>
+                        <ImageBrush Stretch="UniformToFill"
+                                    ImageSource="/Assets/Square150x150Logo.scale-200.png" 
+                                    x:Name="PreviewPhoto"/>
+                    </Border.Background>
+                </Border>
+                <Button Content="Capture a Photo" Click="Handle_Camera" Margin="0 0 20 0"/>
+                <HyperlinkButton Click="Handle_Upload_Image" Margin="0 0 20 0" Content="or Upload a photo"/>
+                <ProgressRing x:Name="ProcessRing" IsActive="False"/>
+            </StackPanel>
+            <TextBlock Text="Gender" Margin="20 10 0 0"/>
+            <StackPanel Style="{StaticResource StackControl}">
+                <RadioButton Tag="Male" Content="Male" GroupName="gender" IsChecked="True" Checked="RadioButton_Checked"/>
+                <RadioButton Tag="Female" Content="Female" GroupName="gender" Checked="RadioButton_Checked"/>
+                <RadioButton Tag="Other" Content="Other" GroupName="gender" Checked="RadioButton_Checked"/>
+            </StackPanel>
+            <TextBox x:Name="Email" Header="Email" Width="620" 
+                     PlaceholderText="Please enter your email" Style="{StaticResource LeftTextBox}"/>
+            <DatePicker x:Name="datePicker" Header="Birthday" Margin="20 10 0 0"/>
+            <TextBox x:Name="Introduction" Header="Introduction" Width="620" 
+                     PlaceholderText="Please enter your introduction" Style="{StaticResource LeftTextBox}"/>
+            <StackPanel Style="{StaticResource StackControl}">
+                <Button Content="Submit" Width="120" Margin="0 0 10 0" Click="Button_Click"/>
+                <Button Content="Reset" Width="120"/>
+            </StackPanel>
+            <HyperlinkButton Click="HyperlinkButton_Click" Margin="20 0 0 0" HorizontalAlignment="Left" Content="If you have an account, click here to login."/>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
